@@ -2,25 +2,25 @@ class Post {
   static List users = [
     {
       "user": {
-        "name": "John Doe",
+        "name": "Prof. Mesquita",
         "picture": "assets/images/1_user.jpg",
       }
     },
     {
       "user": {
-        "name": "Alex Albert",
+        "name": "Prof. Albert",
         "picture": "assets/images/2_user.jpg",
       }
     },
     {
       "user": {
-        "name": "Angelina Doe",
+        "name": "Dra. Angelina",
         "picture": "assets/images/3_user.jpg",
       }
     },
     {
       "user": {
-        "name": "Marcel Marcus",
+        "name": "Dr. Marcel",
         "picture": "assets/images/4_user.jpg",
       }
     },
@@ -34,7 +34,7 @@ class Post {
       "post": {
         "text":
             "A noite é linda e nada é mais bela do que apreciar ela na melhor compania de sempre, ame alguém e seja feliz ao lado dessa pessoa, resumindo, viva o melhor da vida!",
-        "date": "Thu. Apr 21 17:36",
+        "date": "1º Ano - 2 Meses",
         "picture": "assets/images/1_post.jpg",
       }
     },

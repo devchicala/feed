@@ -1,4 +1,4 @@
-import 'package:feed/presentation/home_screen/main.dart';
+import 'package:feed/modules/presentation/home_screen/main.dart';
 import 'package:feed/shared/drawer_component.dart';
 import 'package:flutter/material.dart';
 

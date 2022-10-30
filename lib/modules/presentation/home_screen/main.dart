@@ -1,5 +1,5 @@
-import 'package:feed/presentation/feed_screen/main.dart';
-import 'package:feed/presentation/post_screen/main.dart';
+import 'package:feed/modules/presentation/feed_screen/main.dart';
+import 'package:feed/modules/presentation/post_screen/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -33,24 +33,19 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           BottomNavigationBarItem(
               label: "Diário",
-              icon: SvgPicture.asset("assets/svg/ic_tab_feed_default.svg",
-                  color: _indiceAtual == 0 ? Colors.blue : null)),
+              icon: Image.asset("assets/icons/mark.png", height: 30, width: 30,)),
           BottomNavigationBarItem(
               label: "Crianças",
-              icon: SvgPicture.asset("assets/svg/ic_tab_feed_default.svg",
-                  color: _indiceAtual == 1 ? Colors.blue : null)),
+              icon: Image.asset("assets/icons/children.png", height: 30, width: 30,)),
           BottomNavigationBarItem(
               label: "Pontos",
-              icon: SvgPicture.asset("assets/svg/ic_tab_feed_default.svg",
-                  color: _indiceAtual == 2 ? Colors.blue : null)),
+              icon: Image.asset("assets/icons/plus.png", height: 30, width: 30,)),
           BottomNavigationBarItem(
               label: "Mensagens",
-              icon: SvgPicture.asset("assets/svg/ic_tab_feed_default.svg",
-                  color: _indiceAtual == 3 ? Colors.blue : null)),
+              icon: Image.asset("assets/icons/chat.png", height: 30, width: 30,)),
           BottomNavigationBarItem(
               label: "Descubrir",
-              icon: SvgPicture.asset("assets/svg/ic_tab_feed_default.svg",
-                  color: _indiceAtual == 4 ? Colors.blue : null)),
+              icon: Image.asset("assets/icons/idea.png", height: 30, width: 30,)),
         ],
       ),
     );

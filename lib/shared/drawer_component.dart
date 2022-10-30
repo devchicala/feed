@@ -1,4 +1,4 @@
-import 'package:feed/models/navigation_item.dart';
+import 'package:feed/modules/models/navigation_item.dart';
 import 'package:feed/shared/themes/appColors.dart';
 import 'package:feed/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';

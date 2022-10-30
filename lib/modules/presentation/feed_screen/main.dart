@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:feed/data/post_informations.dart';
+import 'package:feed/modules/data/post_informations.dart';
+import 'package:feed/shared/themes/appColors.dart';
+import 'package:feed/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -17,9 +19,11 @@ class _FeedScreenState extends State<FeedScreen> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: Column(
         children: [
           Container(
+            height: 120,
             child: Row(
               children: [
                 ClipRRect(
@@ -33,20 +37,17 @@ class _FeedScreenState extends State<FeedScreen> {
                 ),
                 Expanded(
                     child: Container(
-                  child: Padding(
-                      padding: const EdgeInsets.only(left: 5, top: 10),
-                      child: Text('A escrever ...')),
-                  margin: EdgeInsets.only(left: 5),
-                  height: 50,
-                  decoration: BoxDecoration(
-                      border: Border.all(),
-                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(child: Text("ClassDojo",
+                  style: AppTextStyles.titleBoldHeading,),)
                 )),
                 Padding(
                     padding: const EdgeInsets.only(right: 10, left: 5),
-                    child: SvgPicture.asset(
-                      "assets/svg/foto.svg",
-                    ))
+                    child: IconButton(
+                              onPressed: () { },
+                              iconSize: 35,
+                              icon: Icon(Icons.add_alert),
+                              color: AppColors.heading,
+                            ),)
               ],
             ),
           ),
@@ -83,7 +84,6 @@ class _FeedScreenState extends State<FeedScreen> {
     return Container(
       width: size.width,
       height: 452,
-      color: Colors.orangeAccent,
       child: Column(
         children: [
           Row(
@@ -103,7 +103,7 @@ class _FeedScreenState extends State<FeedScreen> {
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(userName),
+                  Text(userName, style: AppTextStyles.titleBoldHeading),
                   Text(postDate),
                 ],
               )),
