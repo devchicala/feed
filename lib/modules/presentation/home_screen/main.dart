@@ -1,5 +1,6 @@
 import 'package:feed/modules/presentation/feed_screen/main.dart';
 import 'package:feed/modules/presentation/post_screen/main.dart';
+import 'package:feed/shared/themes/appColors.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _indiceAtual == 0 ? _telas[1] : _telas[0],
+      backgroundColor: AppColors.grey,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indiceAtual,
         unselectedItemColor: Colors.grey,

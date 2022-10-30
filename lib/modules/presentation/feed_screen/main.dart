@@ -18,7 +18,7 @@ class _FeedScreenState extends State<FeedScreen> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.shape,
       body: Column(
         children: [
           Container(
