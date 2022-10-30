@@ -4,7 +4,6 @@ import 'package:feed/modules/data/post_informations.dart';
 import 'package:feed/shared/themes/appColors.dart';
 import 'package:feed/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class FeedScreen extends StatefulWidget {
   const FeedScreen({Key? key}) : super(key: key);
@@ -29,7 +28,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(50.0),
                   child: Image.asset(
-                    "assets/images/2_user.jpg",
+                    "assets/images/perfil.jpg",
                     height: 60,
                     width: 60,
                     fit: BoxFit.cover,
@@ -37,17 +36,21 @@ class _FeedScreenState extends State<FeedScreen> {
                 ),
                 Expanded(
                     child: Container(
-                  child: Center(child: Text("ClassDojo",
-                  style: AppTextStyles.titleBoldHeading,),)
-                )),
+                        child: Center(
+                  child: Text(
+                    "ClassDojo",
+                    style: AppTextStyles.titleBoldHeading,
+                  ),
+                ))),
                 Padding(
-                    padding: const EdgeInsets.only(right: 10, left: 5),
-                    child: IconButton(
-                              onPressed: () { },
-                              iconSize: 35,
-                              icon: Icon(Icons.add_alert),
-                              color: AppColors.heading,
-                            ),)
+                  padding: const EdgeInsets.only(right: 10, left: 5),
+                  child: IconButton(
+                    onPressed: () {},
+                    iconSize: 35,
+                    icon: Icon(Icons.notifications),
+                    color: AppColors.heading,
+                  ),
+                )
               ],
             ),
           ),
@@ -58,6 +61,7 @@ class _FeedScreenState extends State<FeedScreen> {
                   (index) => post(
                       userName: Post.users[index]["user"]["name"],
                       postDate: Post.post[index]["post"]["date"],
+                      postComment: Post.post[index]["post"]["comment"],
                       postImage: Post.post[index]["post"]["picture"],
                       userImage: Post.users[index]["user"]["picture"])),
             ),
@@ -77,15 +81,15 @@ class _FeedScreenState extends State<FeedScreen> {
     required String userImage,
     required String userName,
     required String postDate,
+    required String postComment,
     required String postImage,
   }) {
     var size = MediaQuery.of(context).size;
 
-    return Container(
-      width: size.width,
-      height: 452,
-      child: Column(
-        children: [
+    return SizedBox(
+        width: size.width,
+        height: 470,
+        child: Column(children: [
           Row(
             children: [
               Padding(
@@ -104,14 +108,9 @@ class _FeedScreenState extends State<FeedScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(userName, style: AppTextStyles.titleBoldHeading),
-                  Text(postDate),
+                  Text(postDate, style: AppTextStyles.captionBody),
                 ],
               )),
-              Padding(
-                  padding: const EdgeInsets.only(right: 10, left: 5),
-                  child: SvgPicture.asset(
-                    "assets/svg/foto.svg",
-                  ))
             ],
           ),
           const SizedBox(
@@ -127,9 +126,45 @@ class _FeedScreenState extends State<FeedScreen> {
                         image: AssetImage(postImage), fit: BoxFit.cover)),
               )
             ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 10, bottom: 10),
+                child: Text(
+                  postComment,
+                  style: AppTextStyles.captionBody,
+                ),
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, right: 0),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "2 gostos",
+                        style: AppTextStyles.captionBoldBody,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, right: 0),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "2 comentários",
+                        style: AppTextStyles.captionBoldBody,
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
           )
-        ],
-      ),
-    );
+        ]));
   }
 }

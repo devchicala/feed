@@ -13,7 +13,7 @@ class _PostScreenState extends State<PostScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: (
-        Center(child: Text('Foi',
+        Center(child: Text('OUTRA TELA!',
         style: TextStyle(fontWeight: FontWeight.bold)))
       ),
     );

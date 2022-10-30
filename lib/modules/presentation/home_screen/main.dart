@@ -1,7 +1,6 @@
 import 'package:feed/modules/presentation/feed_screen/main.dart';
 import 'package:feed/modules/presentation/post_screen/main.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -30,22 +29,22 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
-        items: [
+        items: const [
           BottomNavigationBarItem(
               label: "Diário",
-              icon: Image.asset("assets/icons/mark.png", height: 30, width: 30,)),
+              icon: Icon(Icons.abc)),
           BottomNavigationBarItem(
               label: "Crianças",
-              icon: Image.asset("assets/icons/children.png", height: 30, width: 30,)),
+              icon: Icon(Icons.child_care)),
           BottomNavigationBarItem(
               label: "Pontos",
-              icon: Image.asset("assets/icons/plus.png", height: 30, width: 30,)),
+              icon: Icon(Icons.add_circle)),
           BottomNavigationBarItem(
               label: "Mensagens",
-              icon: Image.asset("assets/icons/chat.png", height: 30, width: 30,)),
+              icon: Icon(Icons.chat)),
           BottomNavigationBarItem(
               label: "Descubrir",
-              icon: Image.asset("assets/icons/idea.png", height: 30, width: 30,)),
+              icon: Icon(Icons.tips_and_updates)),
         ],
       ),
     );
