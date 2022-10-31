@@ -18,63 +18,59 @@ class _FeedScreenState extends State<FeedScreen> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: AppColors.shape,
-      body: Column(
-        children: [
-          Container(
-            height: 120,
-            child: Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(50.0),
-                  child: Image.asset(
-                    "assets/images/perfil.jpg",
-                    height: 60,
-                    width: 60,
-                    fit: BoxFit.cover,
-                  ),
+        backgroundColor: AppColors.shape,
+        body: Padding(
+          padding: const EdgeInsets.only(right: 15, left: 15),
+          child: Column(
+            children: [
+              Container(
+                height: 120,
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(50.0),
+                      child: Image.asset(
+                        "assets/images/perfil.jpg",
+                        height: 60,
+                        width: 60,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                            child: Center(
+                      child: Text(
+                        "ClassDojo",
+                        style: AppTextStyles.titleBoldHeading,
+                      ),
+                    ))),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10, left: 5),
+                      child: IconButton(
+                        onPressed: () {},
+                        iconSize: 35,
+                        icon: Icon(Icons.notifications),
+                        color: AppColors.heading,
+                      ),
+                    )
+                  ],
                 ),
-                Expanded(
-                    child: Container(
-                        child: Center(
-                  child: Text(
-                    "ClassDojo",
-                    style: AppTextStyles.titleBoldHeading,
-                  ),
-                ))),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10, left: 5),
-                  child: IconButton(
-                    onPressed: () {},
-                    iconSize: 35,
-                    icon: Icon(Icons.notifications),
-                    color: AppColors.heading,
-                  ),
-                )
-              ],
-            ),
+              ),
+              Flexible(
+                child: ListView(
+                  children: List.generate(
+                      Post.users.length,
+                      (index) => post(
+                          userName: Post.users[index]["user"]["name"],
+                          postDate: Post.post[index]["post"]["date"],
+                          postComment: Post.post[index]["post"]["comment"],
+                          postImage: Post.post[index]["post"]["picture"],
+                          userImage: Post.users[index]["user"]["picture"])),
+                ),
+              )
+            ],
           ),
-          Flexible(
-            child: ListView(
-              children: List.generate(
-                  Post.users.length,
-                  (index) => post(
-                      userName: Post.users[index]["user"]["name"],
-                      postDate: Post.post[index]["post"]["date"],
-                      postComment: Post.post[index]["post"]["comment"],
-                      postImage: Post.post[index]["post"]["picture"],
-                      userImage: Post.users[index]["user"]["picture"])),
-            ),
-          )
-
-          /*post(
-              userName: Post.users[0]["user"]["name"],
-              postDate: Post.post[0]["post"]["date"],
-              postImage: Post.post[0]["post"]["picture"],
-              userImage: Post.users[0]["user"]["picture"])*/
-        ],
-      ),
-    );
+        ));
   }
 
   Widget post({
@@ -88,7 +84,7 @@ class _FeedScreenState extends State<FeedScreen> {
 
     return SizedBox(
         width: size.width,
-        height: 470,
+        height: 510,
         child: Column(children: [
           Row(
             children: [
